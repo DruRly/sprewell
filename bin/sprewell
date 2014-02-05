@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
 require 'sprewell'
+
+Sprewell.spin_test(*ARGV)
