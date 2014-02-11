@@ -2,7 +2,7 @@ require 'bundler/setup'
 require 'rspec'
 require 'rspec-system'
 require 'pry'
-require_relative '../lib/sprewell.rb'
+require './lib/sprewell'
 
 RSpec.configure do |config|
 end
