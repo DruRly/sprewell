@@ -1,15 +1,14 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'sprewell/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "sprewell"
-  spec.version       = Gemrat::VERSION
+  spec.version       = "0.0.1"
   spec.authors       = ["Dru Riley"]
   spec.email         = ["dru@drurly.com"]
-  spec.description   = ""
-  spec.summary       = ""
+  spec.description   = "Sprewell"
+  spec.summary       = "Run tests without fear of touching your code."
   spec.homepage      = "https://github.com/DruRly/sprewell"
   spec.license       = "MIT"
 
