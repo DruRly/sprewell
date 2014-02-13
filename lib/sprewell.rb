@@ -8,10 +8,9 @@ class Sprewell
     FileUtils.cp_r Dir["#{path}/*"], dot_directory
     FileUtils.chdir dot_directory
     orig_std_out = STDOUT.clone
-    STDOUT.reopen(File.open('sprewell.log', 'w'))
+    STDOUT.reopen(File.open(path + '/sprewell.log', 'w'))
     Kernel.system command
     STDOUT.reopen(orig_std_out)
-    FileUtils.mv('sprewell.log', path)
     FileUtils.chdir ".."
   end
 end
