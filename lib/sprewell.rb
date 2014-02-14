@@ -1,5 +1,6 @@
 class Sprewell
-  def self.spin_test command
+  def self.spin_test command=nil
+    if command
     path = Dir.pwd
     parent_directory = path.split("/").last
 
@@ -12,5 +13,12 @@ class Sprewell
     Kernel.system command
     STDOUT.reopen(orig_std_out)
     FileUtils.chdir ".."
+    else
+      STDOUT.puts <<-EOF
+        Please provide a command
+
+        Exmaple: sprewell "rspec spec"
+      EOF
+    end
   end
 end
