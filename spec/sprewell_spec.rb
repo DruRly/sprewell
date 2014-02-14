@@ -12,12 +12,12 @@ describe Sprewell do
         FileUtils.rm_rf(".test_project")
       end
 
-      it 'creates a dot directory of the directory the command is run within' do
+      it 'copies the current directory to a dot directory' do
         Sprewell.spin_test "echo Hi"
         File.directory?('.test_project').should be_true
       end
 
-      it 'runs the command passed to it' do
+      it 'runs the command passed' do
         Kernel.should_receive(:system).with('echo Hi')
         Sprewell.spin_test "echo Hi"
       end
@@ -28,7 +28,7 @@ describe Sprewell do
         contents.should include "Hi"
       end
 
-      it 'creates a dot directory for the console output' do
+      it 'creates sprewell.log for console output' do
         Sprewell.spin_test "echo Hi"
         File.exist?('sprewell.log').should be_true
       end
@@ -42,6 +42,7 @@ describe Sprewell do
         Exmaple: sprewell "rspec spec"
         EOF
       }
+
       it 'prints usage' do
         STDOUT.should_receive(:puts).with(usage)
         Sprewell.spin_test
