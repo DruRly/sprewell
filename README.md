@@ -5,6 +5,6 @@ Sprewell allows you to modify code during long running tasks. Sprewell creates a
 ```
 gem install sprewell
 cd your/project
-sperwell "rspec spec/"
+sprewell "rspec spec/"
 ```
 
